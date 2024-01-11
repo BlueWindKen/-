@@ -4,10 +4,10 @@
 }
 
 header {
-  background-color: rgb(70, 70, 70);
+  background-color: rgba(35, 28, 26, 0.8);
   height: 80px;
   width: 100%;
-  position: relative;
+  position: fixed;
 }
 
 h1 {
@@ -47,7 +47,7 @@ header a:hover {
 .news {
   background-color: rgb(185, 255, 255);
   color: white;
-  height: 85vh;
+  height: 95vh;
   background-image: url(../img/原價屋背景.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,6 +60,7 @@ header a:hover {
 
 .news h2 {
   font-size: 60px;
+  margin-top: 60px;
 }
 
 .news p {
@@ -165,10 +166,88 @@ footer {
   margin: 20px;
 }
 
-.newsletter input .newsletter button {
+.newsletter input,
+.newsletter button {
   background-color: transparent;
   color: white;
   border: 1px solid #949d9a;
   padding: 10px;
   border-radius: 5px;
+}
+
+.newsletter input {
+  width: 200px;
+  margin-right: 15px;
+}
+
+.newsletter button {
+  width: 80px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #dddddd;
+}
+
+input:focus {
+  outline: none;
+  border-color: #00a2ff;
+}
+
+.menu {
+  display: none;
+}
+
+/*響應式設計語法*/
+@media screen and (max-width: 768px) {
+  header ul {
+    display: none;
+  }
+
+  header h1 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .news h2 {
+    font-size: 40px;
+  }
+
+  .menu {
+    display: block;
+    background-color: transparent;
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .shop {
+    flex-direction: column;
+  }
+
+  .shop img {
+    width: 100%;
+  }
+
+  .info {
+    width: 100%;
+    padding: 40px 0;
+  }
+
+  .info h2 {
+    font-size: 30px;
+  }
+
+  .product {
+    flex-direction: column;
+    padding: 60px 0;
+  }
+
+  .product div {
+    margin-bottom: 30px;
+  }
 }
